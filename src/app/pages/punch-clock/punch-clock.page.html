@@ -91,11 +91,11 @@
 				<button type="button" class="btn btn-lg btn-primary fw-bold w-100 py-3" (click)="punchClockNow()">BATER PONTO</button>
 			</div>
 
-			<div class="alert text-center mt-3" *ngIf="workedData && workedData.workedMinutes > 0" [class.alert-info]="workedData.balance > 0" [class.alert-warning]="workedData.balance < 0">
+			<div class="alert text-center mt-3" *ngIf="workedData && workedData.workedMinutes > 0" [class.alert-info]="workedData.balance >= 0" [class.alert-warning]="workedData.balance < 0">
 	
 				<p class="m-0">Você trabalhou por <b>{{ workedData.workedTime }}</b> horas.</p>
 	
-				<p *ngIf="workedData.balance > 0" class="text-success m-0">Saldo positivo de <b>{{ workedData.balanceTime }}</b> horas.</p>
+				<p *ngIf="workedData.balance >= 0" class="text-success m-0">Saldo positivo de <b>{{ workedData.balanceTime }}</b> horas.</p>
 	
 				<p *ngIf="workedData.balance < 0" class="text-danger m-0">Saldo negativo de <b>{{ workedData.balanceTime }}</b> horas.</p>
 	

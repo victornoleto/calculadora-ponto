@@ -5,7 +5,7 @@
 		<div class="d-flex flex-column align-items-center justify-content-center h-100">
 
 			<div class="alert text-center p-4 shadow-lg"
-				[class.alert-success]="balance > 0"
+				[class.alert-success]="balance >= 0"
 				[class.alert-warning]="balance < 0"
 				>
 	
@@ -13,7 +13,7 @@
 	
 				<div class="fs-1">
 					<i class="fad"
-						[class.fa-smile]="balance > 0"
+						[class.fa-smile]="balance >= 0"
 						[class.fa-sad-tear]="balance < 0"
 						>
 					</i>

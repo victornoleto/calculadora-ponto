@@ -22,7 +22,7 @@ const routes: Routes = [
 			},
 			{
 				path: '',
-				redirectTo: 'calendar',
+				redirectTo: 'punch-clock',
 				pathMatch: 'full'	
 			}
 		]
