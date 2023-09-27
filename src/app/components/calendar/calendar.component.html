@@ -1,0 +1,74 @@
+<div class="d-flex flex-column h-100">
+
+	<div class="d-flex align-items-center gap-3 p-3">
+
+		<button type="button" class="btn btn-dark btn-icon" (click)="prevMonth()">
+			<i class="fal fa-chevron-left"></i>
+		</button>
+
+		<button type="button" class="btn btn-dark btn-icon" (click)="nextMonth()">
+			<i class="fal fa-chevron-right"></i>
+		</button>
+
+		<h3 *ngIf="month" class="m-0 fw-bold">{{ month.format('MMM YYYY') }}</h3>
+
+		<button type="button" class="btn btn-primary ms-auto" (click)="todayMonth()">Hoje</button>
+
+	</div>
+	
+	<div class="flex-grow-1">
+
+		<div class="weeks d-flex flex-column h-100">
+	
+			<div class="week d-flex flex-grow-1" *ngFor="let week of weeks; let weekIndex = index">
+	
+				<div class="day flex-grow-1 position-relative" *ngFor="let item of week; let dayIndex = index" (click)="openDay(item)">
+	
+					<div class="day-content position-absolute top-0 start-0 w-100 h-100 d-flex flex-column" [class.opacity-25]="!item.isCurrentMonth">
+
+						<div class="header-text d-flex flex-column align-items-center justify-content-center my-2">
+
+							<small *ngIf="weekIndex == 0" class="opacity-50">{{ weekdayNames[dayIndex] }}</small>
+
+							<small class="mt-1 text-muted">
+
+								<ng-container *ngIf="item.day == 1">{{ item.date.format('D MMM') }}</ng-container>
+
+								<ng-container *ngIf="item.day != 1">{{ item.day }}</ng-container>
+
+							</small>
+
+						</div>
+
+						<div class="d-flex flex-column justify-content-center align-items-center" *ngIf="item.workedData.workedMinutes > 0">
+
+							<div class="badge py-1 px-2"
+								[class.bg-success]="item.workedData.punchesCount % 2 == 0"
+								[class.bg-danger]="item.workedData.punchesCount % 2 != 0"
+							>
+								{{ item.workedData.punchesCount }}
+							</div>
+
+							<p class="m-0 mt-1">{{ item.workedData.workedTime }}</p>
+
+							<small
+								[class.text-success]="item.workedData.balance > 0"
+								[class.text-danger]="item.workedData.balance < 0"
+								[ngStyle]="{'font-size': '10px'}"
+								>
+									{{ item.workedData.balanceTime}}
+							</small>
+
+						</div>
+	
+					</div>
+	
+				</div>
+	
+			</div>
+	
+		</div>
+
+	</div>
+	
+</div>

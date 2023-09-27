@@ -1,0 +1,31 @@
+.weeks, .week, .day {
+	border-collapse: collapse;
+}
+
+.weeks {
+	
+	.week {
+		
+		.day {
+			border: 1px solid var(--bs-border-color);
+			cursor: pointer;
+			transition: background-color 0.4s ease;
+
+			&:hover {
+				background-color: #f5f5f5;
+			}
+
+			&:not(:first-child) {
+				border-left: none;
+			}
+		}
+
+		&:not(:first-child) .day {
+			border-top: none;
+		}
+
+		&:last-child .day {
+			border-bottom: none;
+		}
+	}
+}
