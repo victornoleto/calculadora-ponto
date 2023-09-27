@@ -9,7 +9,7 @@
 				[class.alert-warning]="balance < 0"
 				>
 	
-				<h1 class="mb-3">Você possui um saldo {{ balance > 0 ? 'positivo' : 'negativo' }} de <b>{{ balanceTime }}</b> horas!</h1>
+				<h1 class="mb-3">Você possui um saldo {{ balance >= 0 ? 'positivo' : 'negativo' }} de <b>{{ balanceTime }}</b> horas!</h1>
 	
 				<div class="fs-1">
 					<i class="fad"
@@ -21,7 +21,7 @@
 				
 			</div>
 
-			<p class="text-muted mt-4 px-4 text-center">Obrigado Henrique pela inspiração para essa aplicação!</p>
+			<a href="https://calcponto.perdimeubicho.com.br/" target="_blank" class="text-muted mt-4 px-4 text-center">Obrigado Henrique pela inspiração para essa aplicação!</a>
 
 		</div>
 
