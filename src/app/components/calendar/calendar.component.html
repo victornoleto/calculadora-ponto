@@ -22,7 +22,7 @@
 	
 			<div class="week d-flex flex-grow-1" *ngFor="let week of weeks; let weekIndex = index">
 	
-				<div class="day flex-grow-1 position-relative" *ngFor="let item of week; let dayIndex = index" (click)="openDay(item)">
+				<div class="day flex-grow-1 position-relative" *ngFor="let item of week; let dayIndex = index" [class.today]="item.isToday" (click)="openDay(item)">
 	
 					<div class="day-content position-absolute top-0 start-0 w-100 h-100 d-flex flex-column" [class.opacity-25]="!item.isCurrentMonth">
 

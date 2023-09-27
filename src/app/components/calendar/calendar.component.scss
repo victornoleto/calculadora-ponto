@@ -18,6 +18,10 @@
 			&:not(:first-child) {
 				border-left: none;
 			}
+
+			&.today {
+				background-color: rgba(var(--bs-warning-rgb), 0.1);
+			}
 		}
 
 		&:not(:first-child) .day {
