@@ -55,8 +55,8 @@
 								}
 							],
 							"outputHashing": "all",
-							"outputPath": "/var/www/calculadora-ponto-build",
-							"baseHref": "/calculadora-ponto-build/",
+							"outputPath": "/var/www/calculadora-ponto/dist",
+							"baseHref": "/",
 							"optimization": true,
 							"sourceMap": false,
 							"namedChunks": false,
